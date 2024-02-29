@@ -46,7 +46,7 @@ export default async function Home({searchParams}: {searchParams: {q?: string}})
           <p className="whitespace-nowrap">Could not find results for {searchParams.q}</p>
         ) : (
           restaurants.map((restaurant) => (
-            <RestaurantCard key={restaurant.id} restaurant={restaurant} />
+            <RestaurantCard key={`restaurant-${restaurant.id}`} restaurant={restaurant} />
           ))
         )}
       </section>

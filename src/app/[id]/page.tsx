@@ -29,7 +29,7 @@ export default async function RestaurantPage({params: {id}}: {params: {id: strin
 
   return (
     <>
-      <article key={restaurant.id}>
+      <article key={`restaurant-${restaurant.id}`}>
         <div className="hidden md:block md:pb-4">
           <Link
             className="flex flex-row items-center rounded-md bg-white font-bold text-white md:text-black"
