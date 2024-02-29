@@ -15,7 +15,7 @@ export default function Hero({image, name, description}: HeroProps) {
         src={image}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
-      <div className="absolute bottom-0 left-0 p-[22px] text-white md:p-[32px]">
+      <div className="absolute bottom-0 left-0 p-4 text-white md:p-[32px]">
         <p className="text-3xl font-bold md:text-5xl">{name}</p>
         <p className="md:text-md mt-1 text-sm opacity-90">{description}</p>
       </div>

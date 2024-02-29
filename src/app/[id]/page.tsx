@@ -64,7 +64,7 @@ export default async function RestaurantPage({params: {id}}: {params: {id: strin
             </div>
           </div>
         </small>
-        <small className=" flex p-[22px] text-lg font-normal md:hidden">
+        <small className="flex px-4 py-4 text-lg font-normal md:hidden">
           <div className="flex flex-col">
             <div className="flex flex-row gap-x-4">
               <div className="flex flex-row">
@@ -81,7 +81,6 @@ export default async function RestaurantPage({params: {id}}: {params: {id: strin
               </div>
             </div>
             <div className="flex flex-row">
-              {" "}
               <img
                 alt="Location Overview"
                 className="mb-3 h-6 w-6"
@@ -93,7 +92,7 @@ export default async function RestaurantPage({params: {id}}: {params: {id: strin
         </small>
       </article>
       <Highlights />
-      <div className="my-6 block px-4 md:hidden md:px-0">
+      <div className="my-8 block px-4 md:hidden md:px-0">
         <Link href="/">
           <button
             className="mr-1 w-full rounded-xl bg-violet-500 p-4 text-center font-semibold text-white"
