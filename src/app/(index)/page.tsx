@@ -1,11 +1,11 @@
-import {redirect} from "next/navigation";
+import { redirect } from "next/navigation";
 
 import api from "@/api";
 import RestaurantCard from "@/components/RestaurantCard";
 
 import Hero from "./components/Hero";
 
-export default async function Home({searchParams}: {searchParams: {q?: string}}) {
+export default async function Home({ searchParams }: { searchParams: { q?: string } }) {
   const restaurants = await api.search(searchParams.q ?? "");
 
   async function searchAction(formData: FormData) {
@@ -40,7 +40,7 @@ export default async function Home({searchParams}: {searchParams: {q?: string}})
       </form>
       <section className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
         {restaurants.length === 0 ? (
-          <p>No se encontraron resultados para {searchParams.q}</p>
+          <p className="whitespace-nowrap">No se encontraron resultados para {searchParams.q}</p>
         ) : (
           restaurants.map((restaurant) => (
             <RestaurantCard key={restaurant.id} restaurant={restaurant} />
