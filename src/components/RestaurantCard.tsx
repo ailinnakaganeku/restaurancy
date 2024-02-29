@@ -24,7 +24,7 @@ const DynamicFavoriteButton = dynamic(async () => FavoriteButton, {ssr: false});
 export default function RestaurantCard({restaurant}: {restaurant: Restaurant}) {
   return (
     <article>
-      <Link legacyBehavior passHref href={`/${restaurant.id}`}>
+      <Link href={`/${restaurant.id}`}>
         <img
           alt={restaurant.name}
           className="mb-3 h-[300px] w-full rounded-xl object-cover"
@@ -32,7 +32,7 @@ export default function RestaurantCard({restaurant}: {restaurant: Restaurant}) {
         />
       </Link>
       <h2 className="inline-flex items-center gap-2 text-lg font-bold">
-        <Link legacyBehavior passHref href={`/${restaurant.id}`}>
+        <Link href={`/${restaurant.id}`}>
           <span>{restaurant.name}</span>
         </Link>
         <div className="flex items-center gap-1">
@@ -42,7 +42,7 @@ export default function RestaurantCard({restaurant}: {restaurant: Restaurant}) {
         </div>
         <DynamicFavoriteButton restaurant={restaurant} />
       </h2>
-      <p className="opacity-90">{restaurant.description}</p>
+      <p className="text-[#3D404A] opacity-90">{restaurant.description}</p>
     </article>
   );
 }

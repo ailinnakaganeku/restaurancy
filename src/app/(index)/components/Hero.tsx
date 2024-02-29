@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="relative min-h-[250px] overflow-hidden rounded-xl">
+    <div className="relative min-h-[250px] overflow-hidden md:rounded-xl">
       <Image
         alt="Your image description"
         layout="fill"
