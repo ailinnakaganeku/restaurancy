@@ -3,6 +3,8 @@ import {redirect} from "next/navigation";
 import api from "@/api";
 import RestaurantCard from "@/components/RestaurantCard";
 
+import Hero from "./components/Hero";
+
 export default async function Home({searchParams}: {searchParams: {q?: string}}) {
   const restaurants = await api.search(searchParams.q ?? "");
 
@@ -13,7 +15,8 @@ export default async function Home({searchParams}: {searchParams: {q?: string}})
   }
 
   return (
-    <>
+    <section className="mx-auto max-w-screen-lg">
+      <Hero />
       <form action={searchAction} className="mb-4 inline-flex gap-2">
         <input className="px-2" defaultValue={searchParams.q || ""} name="query" />
         <button className="bg-white/20 p-2" type="submit">
@@ -29,6 +32,6 @@ export default async function Home({searchParams}: {searchParams: {q?: string}})
           ))
         )}
       </section>
-    </>
+    </section>
   );
 }

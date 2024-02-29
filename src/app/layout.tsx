@@ -17,8 +17,9 @@ const epilogue = Epilogue({
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html className={epilogue.className} lang="en">
-      <body className="container m-auto grid min-h-screen grid-rows-[auto,1fr,auto] px-4">
-        <header className="text-xl font-bold leading-[3rem]">
+      <div className="absolute left-0 right-0 top-[48px] h-[1px] bg-gray-200" />
+      <body className="container m-auto grid min-h-screen max-w-screen-xl grid-rows-[auto,1fr,auto] px-4">
+        <header className="relative text-xl font-bold leading-[3rem]">
           <Link href="/">Restaurancy</Link>
         </header>
         <main className="py-8">{children}</main>
