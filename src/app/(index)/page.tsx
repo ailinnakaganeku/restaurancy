@@ -17,11 +17,17 @@ export default async function Home({searchParams}: {searchParams: {q?: string}})
   return (
     <section className="mx-auto max-w-screen-lg">
       <Hero />
-      <form action={searchAction} className="mb-4 inline-flex gap-2">
-        <input className="px-2" defaultValue={searchParams.q || ""} name="query" />
-        <button className="bg-white/20 p-2" type="submit">
-          Search
-        </button>
+      <form action={searchAction} className="my-4 mb-4 inline-flex gap-2">
+        <div className="flex items-center justify-center rounded-xl border border-gray-300">
+          <input
+            className="h-[64px] rounded-xl px-2"
+            defaultValue={searchParams.q || ""}
+            name="query"
+          />
+          <button className="mr-2 h-[48px] rounded-xl bg-violet-500 p-3 text-white" type="submit">
+            Search
+          </button>
+        </div>
       </form>
       <section className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
         {restaurants.length === 0 ? (

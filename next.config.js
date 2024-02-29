@@ -2,7 +2,7 @@
 const nextConfig = {
   experimental: {
     ppr: true,
-    serverActions: {
+     serverActions: {
       allowedOrigins: ["my-proxy.com", "*.my-proxy.com"],
     },
   },
