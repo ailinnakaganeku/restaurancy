@@ -34,7 +34,7 @@ export default async function Home({searchParams}: {searchParams: {q?: string}})
             placeholder="Enter your restaurant here..."
           />
           <button
-            className="mr-1 rounded-xl bg-violet-500 p-4 text-center text-white"
+            className="mr-1 rounded-xl bg-violet-500 p-4 text-center font-semibold text-white"
             type="submit"
           >
             Search
