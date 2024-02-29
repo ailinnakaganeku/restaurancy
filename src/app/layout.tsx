@@ -3,6 +3,7 @@ import type {Metadata} from "next";
 import {Epilogue} from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Restaurancy - Hello World",
@@ -23,9 +24,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         </header>
         <div className="absolute left-0 right-0 top-[48px] h-[1px] bg-gray-200" />
         <main className="py-8">{children}</main>
-        <footer className="text-center leading-[3rem] opacity-70">
-          © {new Date().getFullYear()} Restaurancy
-        </footer>
+        <Footer />
       </body>
     </html>
   );

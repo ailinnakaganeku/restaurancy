@@ -1,11 +1,11 @@
-import { redirect } from "next/navigation";
+import {redirect} from "next/navigation";
 
 import api from "@/api";
 import RestaurantCard from "@/components/RestaurantCard";
 
 import Hero from "./components/Hero";
 
-export default async function Home({ searchParams }: { searchParams: { q?: string } }) {
+export default async function Home({searchParams}: {searchParams: {q?: string}}) {
   const restaurants = await api.search(searchParams.q ?? "");
 
   async function searchAction(formData: FormData) {
@@ -17,15 +17,15 @@ export default async function Home({ searchParams }: { searchParams: { q?: strin
   return (
     <>
       <Hero />
-      <form action={searchAction} className="my-6 mb-4 flex justify-center">
-        <div className="relative flex w-8/12 items-center justify-center rounded-xl border border-gray-300 shadow-sm">
+      <form action={searchAction} className="my-5 mb-3 flex justify-center md:my-6 md:mb-4">
+        <div className="relative flex w-full items-center justify-center rounded-xl border border-gray-300 shadow-sm md:w-8/12">
           <img
             alt="Search Icon"
             className="absolute left-4 top-[30px] h-[22px] w-[22px] -translate-y-1/2 transform"
             src="/img/search.svg"
           />
           <input
-            className="h-[64px] w-full rounded-xl pl-12 pr-4"
+            className="md:text-md h-[64px] w-full rounded-xl pl-12 pr-4 text-sm"
             defaultValue={searchParams.q || ""}
             name="query"
             placeholder="Enter your restaurant here"
