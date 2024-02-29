@@ -93,7 +93,7 @@ export default async function RestaurantPage({params: {id}}: {params: {id: strin
         </small>
       </article>
       <Highlights />
-      <div className="my-4 block px-4 md:hidden md:px-0">
+      <div className="my-6 block px-4 md:hidden md:px-0">
         <Link href="/">
           <button
             className="mr-1 w-full rounded-xl bg-violet-500 p-4 text-center font-semibold text-white"
