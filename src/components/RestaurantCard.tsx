@@ -23,24 +23,26 @@ const DynamicFavoriteButton = dynamic(async () => FavoriteButton, {ssr: false});
 
 export default function RestaurantCard({restaurant}: {restaurant: Restaurant}) {
   return (
-    <Link href={`/${restaurant.id}`}>
-      <article>
+    <article>
+      <Link href={`/${restaurant.id}`}>
         <img
           alt={restaurant.name}
-          className="mb-3 h-[300px] w-full object-cover"
+          className="mb-3 h-[300px] w-full rounded-xl object-cover"
           src={restaurant.image}
         />
-        <h2 className="inline-flex items-center gap-2 text-lg font-bold">
+      </Link>
+      <h2 className="inline-flex items-center gap-2 text-lg font-bold">
+        <Link href={`/${restaurant.id}`}>
           <span>{restaurant.name}</span>
-          <small className="inline-flex gap-1">
-            <span>⭐</span>
-            <span>{restaurant.score}</span>
-            <span className="font-normal opacity-75">({restaurant.ratings})</span>
-          </small>
-          <DynamicFavoriteButton restaurant={restaurant} />
-        </h2>
-        <p className="opacity-90">{restaurant.description}</p>
-      </article>
-    </Link>
+        </Link>
+        <div className="flex items-center gap-1">
+          <img alt="Star Icon" className="mb-1 h-[14px] w-[14px]" src="/img/star.svg" />
+          <span className="text-[14.4px]">{restaurant.score}</span>
+          <span className="text-[14.4px] font-normal opacity-75">({restaurant.ratings})</span>
+        </div>
+        <DynamicFavoriteButton restaurant={restaurant} />
+      </h2>
+      <p className="opacity-90">{restaurant.description}</p>
+    </article>
   );
 }

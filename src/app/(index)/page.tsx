@@ -15,16 +15,25 @@ export default async function Home({searchParams}: {searchParams: {q?: string}})
   }
 
   return (
-    <section className="mx-auto max-w-screen-lg">
+    <>
       <Hero />
-      <form action={searchAction} className="my-4 mb-4 inline-flex gap-2">
-        <div className="flex items-center justify-center rounded-xl border border-gray-300">
+      <form action={searchAction} className="my-6 mb-4 flex justify-center">
+        <div className="relative flex w-8/12 items-center justify-center rounded-xl border border-gray-300 shadow-sm">
+          <img
+            alt="Search Icon"
+            className="absolute left-4 top-[30px] h-[22px] w-[22px] -translate-y-1/2 transform"
+            src="/img/search.svg"
+          />
           <input
-            className="h-[64px] rounded-xl px-2"
+            className="h-[64px] w-full rounded-xl pl-12 pr-4"
             defaultValue={searchParams.q || ""}
             name="query"
+            placeholder="Enter your restaurant here"
           />
-          <button className="mr-2 h-[48px] rounded-xl bg-violet-500 p-3 text-white" type="submit">
+          <button
+            className="mr-1 rounded-xl bg-violet-500 p-4 text-center text-white"
+            type="submit"
+          >
             Search
           </button>
         </div>
@@ -38,6 +47,6 @@ export default async function Home({searchParams}: {searchParams: {q?: string}})
           ))
         )}
       </section>
-    </section>
+    </>
   );
 }
